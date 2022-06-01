@@ -22,14 +22,14 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
+        val menuViewModel =
             ViewModelProvider(this).get(MenuViewModel::class.java)
 
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textMenu
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        menuViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

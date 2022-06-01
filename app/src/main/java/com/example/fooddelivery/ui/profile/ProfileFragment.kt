@@ -22,14 +22,14 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel: ProfileViewModel
-        dashboardViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        val profileViewModel: ProfileViewModel
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textProfile
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        profileViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

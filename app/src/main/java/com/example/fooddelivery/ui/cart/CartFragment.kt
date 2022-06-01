@@ -22,20 +22,20 @@ class CartFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val cartViewModel =
             ViewModelProvider(this).get(CartViewModel::class.java)
 
         _binding = FragmentCartBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textCart
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        cartViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
     }
 
-    override fun onDestroyView() {
+        override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
