@@ -1,13 +1,13 @@
-package com.example.fooddelivery.ui.home
+package com.example.fooddelivery.ui.menu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class MenuViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is menu Fragment"
     }
     val text: LiveData<String> = _text
 }
