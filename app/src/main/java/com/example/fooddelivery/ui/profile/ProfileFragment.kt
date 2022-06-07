@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.fooddelivery.databinding.FragmentProfileBinding
+import com.example.fooddelivery.ui.cart.CartViewModel
 
 class ProfileFragment : Fragment() {
 
@@ -22,8 +23,10 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileViewModel: ProfileViewModel
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+        val profileViewModel =
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
+
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root

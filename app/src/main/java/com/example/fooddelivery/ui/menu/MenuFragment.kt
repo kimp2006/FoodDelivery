@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.fooddelivery.R
+import com.example.fooddelivery.adapter.ProductAdapter
 import com.example.fooddelivery.databinding.FragmentMenuBinding
 
 class MenuFragment : Fragment() {
@@ -28,15 +30,26 @@ class MenuFragment : Fragment() {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textMenu
+
+
+        val textView: TextView = binding.Menu
         menuViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+
         return root
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
+
+
+
 }
